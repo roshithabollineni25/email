@@ -1,21 +1,65 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+
+<head>
+
+<title>Email Logs</title>
+
+<style>
+
+table{
+    border-collapse:collapse;
+    width:100%;
+}
+
+th,td{
+    border:1px solid black;
+    padding:10px;
+}
+
+</style>
+
+</head>
+
 <body>
-  <h2>Email History</h2>
-  <table border="1">
-    <tr>
-      <th>Organization</th>
-      <th>Emails</th>
-      <th>Content</th>
-    </tr>
-    {% for log in logs %}
-    <tr>
-      <td>{{ log.org_name | e }}</td>
-      <td>{{ log.emails | e }}</td>
-      <!-- The '| e' filter ensures malicious scripts are rendered as safe text -->
-      <td><pre>{{ log.content | e }}</pre></td>
-    </tr>
-    {% endfor %}
-  </table>
+
+<h1>Email Logs</h1>
+
+<table>
+
+<tr>
+    <th>Organization</th>
+    <th>Emails</th>
+    <th>Content</th>
+</tr>
+
+{% for log in logs %}
+
+<tr>
+
+<td>
+{{ log.org_name }}
+</td>
+
+<td>
+{{ log.emails }}
+</td>
+
+<td>
+{{ log.content }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">
+Go Home
+</a>
+
 </body>
 </html>

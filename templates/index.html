@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Service</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            margin:40px;
+        }
+
+        input,textarea{
+            width:300px;
+            padding:8px;
+            margin:5px;
+        }
+
+        button{
+            padding:10px;
+            background:green;
+            color:white;
+            border:none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Flask MongoDB Email App 🚀</h1>
+
+<hr>
+
+<h2>Add Organization</h2>
+
+<form action="/org-form" method="POST">
+
+    <input
+        type="text"
+        name="org_name"
+        placeholder="Organization Name"
+        required
+    >
+
+    <br>
+
+    <input
+        type="text"
+        name="emails"
+        placeholder="email1@gmail.com,email2@gmail.com"
+        required
+    >
+
+    <br>
+
+    <button type="submit">
+        Save Organization
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Send Email</h2>
+
+<form action="/sendmail-form" method="POST">
+
+    <input
+        type="text"
+        name="org_name"
+        placeholder="Organization Name"
+        required
+    >
+
+    <br>
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+    >
+
+    <br>
+
+    <textarea
+        name="message"
+        rows="5"
+        placeholder="Enter Message"
+        required>
+    </textarea>
+
+    <br>
+
+    <button type="submit">
+        Send Email
+    </button>
+
+</form>
+
+<hr>
+
+<a href="/emails">
+    View Email Logs
+</a>
+
+</body>
+</html>
